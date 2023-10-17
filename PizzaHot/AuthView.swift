@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AuthView: View {
     
     @State var isAuth = true
+    @State var isTabViewShow = false
+    
     @State var email = ""
     @State var password = ""
-    @State var repeatPassword = ""
+    @State var confirmPassword = ""
     
     var body: some View {
         VStack {
@@ -38,7 +40,8 @@ struct ContentView: View {
                     .clipShape(.buttonBorder)
                     .padding([.horizontal, .bottom])
                 
-                if !isAuth { SecureField("Repeat password", text: $repeatPassword)
+                if !isAuth {
+                    SecureField("Repeat password", text: $confirmPassword)
                         .padding()
                         .background(.alphaWhite)
                         .clipShape(.buttonBorder)
@@ -48,8 +51,13 @@ struct ContentView: View {
                 Button(isAuth ? "Login" : "Create account") {
                     if isAuth {
                         print("Login pressed")
+                        isTabViewShow.toggle()
                     } else {
                         print("Created pressed")
+                        self.email = ""
+                        self.password = ""
+                        self.confirmPassword = ""
+                        isAuth.toggle()
                     }
                 }
                 .padding()
@@ -57,7 +65,7 @@ struct ContentView: View {
                 .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
                 .font(.title3.bold())
                 .foregroundStyle(.darkBrown)
-                
+                .clipShape(.buttonBorder)
                 .padding()
                 
                 Button("Not with us yet?") {
@@ -72,7 +80,6 @@ struct ContentView: View {
             .padding(isAuth ? 30 : 5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
         .background(
             Image("backgroundImage")
                 .resizable()
@@ -81,9 +88,12 @@ struct ContentView: View {
                 .blur(radius: isAuth ? 0 : 6)
         )
         .animation(.easeInOut, value: isAuth)
+        .fullScreenCover(isPresented: $isTabViewShow, content: {
+            MainTabBar()
+        })
     }
 }
 
 #Preview {
-    ContentView()
+    AuthView()
 }
