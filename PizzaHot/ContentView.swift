@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var isAuth = true
     @State var email = ""
     @State var password = ""
+    @State var repeatPassword = ""
     
     var body: some View {
         VStack {
-            Text("Authorization")
+            Text(isAuth ? "Authorization" : "Registration")
                 .padding()
-                .padding(.horizontal, 30)
+                .padding(.horizontal, isAuth ? 30 : 40)
                 .font(.title2.bold())
                 .background(.alphaWhite)
                 .foregroundStyle(.darkBrown)
                 .clipShape(.capsule)
-                .padding(.vertical, 40)
+                .padding(.vertical, isAuth ? 40 : 20)
             
             VStack(spacing: 10) {
                 TextField("Enter email", text: $email)
@@ -36,34 +38,49 @@ struct ContentView: View {
                     .clipShape(.buttonBorder)
                     .padding([.horizontal, .bottom])
                 
-                Button("Login") {
-                    print("Login pressed")
-                    
+                if !isAuth { SecureField("Repeat password", text: $repeatPassword)
+                        .padding()
+                        .background(.alphaWhite)
+                        .clipShape(.buttonBorder)
+                        .padding([.horizontal, .bottom])
+                }
+                
+                Button(isAuth ? "Login" : "Create account") {
+                    if isAuth {
+                        print("Login pressed")
+                    } else {
+                        print("Created pressed")
+                    }
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
                 .font(.title3.bold())
                 .foregroundStyle(.darkBrown)
-                .clipShape(.buttonBorder)
+                
                 .padding()
                 
                 Button("Not with us yet?") {
-                    print("register button pressed")
+                    isAuth.toggle()
+                    print("Not with us yet pressed")
                 }
                 .padding()
             }
+            .padding(.top, 40)
             .background(.alphaWhite)
-            .padding()
-            .clipShape(.buttonBorder)
+            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .padding(isAuth ? 30 : 5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
         .background(
             Image("backgroundImage")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
+                .blur(radius: isAuth ? 0 : 6)
         )
+        .animation(.easeInOut, value: isAuth)
     }
 }
 
