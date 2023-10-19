@@ -29,7 +29,7 @@ struct MainTabBar: View {
     }
     
     private var cartTab: some View {
-        CartView()
+        CartView(viewModel: CartViewModel())
             .tabItem {
                 Image(systemName: Tab.cart.iconName)
                 Text(Tab.cart.title)

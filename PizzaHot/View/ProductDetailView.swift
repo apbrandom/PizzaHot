@@ -12,33 +12,55 @@ struct ProductDetailView: View {
     @ObservedObject var viewModel: ProductDetailViewModel
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            Image(.pizzaM)
-                .resizable()
-                .frame(maxWidth: .infinity, maxHeight: Constants.LayoutMetrics.detailImageHeight) 
-            
-            HStack {
-                Text(viewModel.product.title)
-                    .font(.title2.bold())
+        VStack {
+            VStack(alignment: .leading) {
+                Image(.pizzaM)
+                    .resizable()
+                    .frame(maxWidth: .infinity, maxHeight: Constants.LayoutMetrics.detailImageHeight)
                 
-                Spacer()
-                Text(Tools.formatPrice(viewModel.getPrice(size: viewModel.size.rawValue)))
-                    .font(.title2 )
-            }
-            .padding(.horizontal)
-            
-            Picker(Constants.LocalizedStrings.pizzaSize, selection: $viewModel.size) {
-                ForEach(ProductDetailViewModel.Size.allCases, id: \.self) { size in
-                    Text(size.rawValue.capitalized).tag(size)
+                HStack {
+                    Text(viewModel.product.title)
+                        .font(.title2.bold())
+                    
+                    Spacer()
+                    Text(Tools.formatPrice(viewModel.getPrice(size: viewModel.size.rawValue)))
+                        .font(.title2 )
                 }
-            }
-            .pickerStyle(.segmented)
-            .padding() 
-            
-            Text(viewModel.product.description)
+                .padding(.horizontal)
+                
+                Picker(Constants.LocalizedStrings.pizzaSize, selection: $viewModel.size) {
+                    ForEach(ProductDetailViewModel.Size.allCases, id: \.self) { size in
+                        Text(size.rawValue.capitalized).tag(size)
+                    }
+                }
+                .pickerStyle(.segmented)
                 .padding()
-
+                
+                HStack {
+                    Stepper("Quantity", value: $viewModel.count, in: 1...10)
+                    Text("\(viewModel.count)")
+                        .padding(.horizontal)
+                     
+                }.padding(.horizontal)
+                
+                Text(viewModel.product.description)
+                    .padding(.horizontal)
+                
+            }
+            
+            Button(action: {
+                print("add to cart pressed")
+            }, label: {
+                Text("Add to cart")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
+                    .font(.title3.bold())
+                    .foregroundStyle(.darkBrown)
+                    .clipShape(.buttonBorder)
+                    .contentShape(Rectangle())
+                    .padding()
+            })
             Spacer()
         }
     }

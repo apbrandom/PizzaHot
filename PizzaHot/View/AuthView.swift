@@ -48,7 +48,7 @@ struct AuthView: View {
                         .padding([.horizontal, .bottom])
                 }
                 
-                Button(isAuth ? "Login" : "Create account") {
+                Button(action: {
                     if isAuth {
                         print("Login pressed")
                         isTabViewShow.toggle()
@@ -59,21 +59,25 @@ struct AuthView: View {
                         self.confirmPassword = ""
                         isAuth.toggle()
                     }
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
-                .font(.title3.bold())
-                .foregroundStyle(.darkBrown)
-                .clipShape(.buttonBorder)
-                .contentShape(Rectangle())
-                .padding()
-                
-                Button("Not with us yet?") {
+                }, label: {
+                    Text(isAuth ? "Login" : "Create account")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(LinearGradient(colors: [.yellow, .orange], startPoint: .leading, endPoint: .trailing))
+                        .font(.title3.bold())
+                        .foregroundStyle(.darkBrown)
+                        .clipShape(.buttonBorder)
+                        .contentShape(Rectangle())
+                        .padding()
+                })
+                Button(action: {
                     isAuth.toggle()
                     print("Not with us yet pressed")
-                }
-                .padding()
+                }, label: {
+                    Text("Not with us yet?")
+                        .padding()
+                })
+                
             }
             .padding(.top, 40)
             .background(.alphaWhite)
@@ -81,6 +85,7 @@ struct AuthView: View {
             .padding(isAuth ? 30 : 5)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
         .background(
             Image("backgroundImage")
                 .resizable()

@@ -17,10 +17,12 @@ class ProductDetailViewModel: ObservableObject {
     
     @Published var product: Product 
     @Published var size: Size
+    @Published var count: Int
     
     init(product: Product) {
         self.product = product
         self.size = .medium
+        self.count = 0
     }
     
     func getPrice(size: String) -> Double {
