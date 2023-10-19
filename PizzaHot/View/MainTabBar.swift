@@ -8,28 +8,40 @@
 import SwiftUI
 
 struct MainTabBar: View {
+    
     var body: some View {
+        
         TabView {
-            NavigationView {
-                CatalogView()
-            }
-            .tabItem {
-                Image(systemName: "menucard")
-                Text("Catalog")
-            }
-             
-            CartView()
-                .tabItem {
-                    Image(systemName: "cart")
-                    Text("Cart")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("Profile")
-                }
+            catalogTab
+            cartTab
+            profileTab
         }
+    }
+    
+    private var catalogTab: some View {
+        NavigationView {
+            CatalogView()
+        }
+        .tabItem {
+            Image(systemName: Tab.catalog.iconName)
+            Text(Tab.catalog.title)
+        }
+    }
+    
+    private var cartTab: some View {
+        CartView()
+            .tabItem {
+                Image(systemName: Tab.cart.iconName)
+                Text(Tab.cart.title)
+            }
+    }
+    
+    private var profileTab: some View {
+        ProfileView()
+            .tabItem {
+                Image(systemName: Tab.profile.iconName)
+                Text(Tab.profile.title)
+            }
     }
 }
 

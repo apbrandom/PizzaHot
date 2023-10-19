@@ -9,17 +9,17 @@ import SwiftUI
 
 struct CatalogView: View {
     
-    let layout = [GridItem(.adaptive(minimum: screen.width / 2.4))]
+    let layout = [GridItem(.adaptive(minimum: screen.width / Constants.LayoutMetrics.sreenRatio))]
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            
-            Section("Popular") {
+            Section(Constants.LocalizedStrings.popular) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: layout) {
                         ForEach(CatalogViewModel.shared.products, id: \.id) { item in
                             NavigationLink {
-                                ProductDetailView(product: item)
+                                let viewModel = ProductDetailViewModel(product: item)
+                                ProductDetailView(viewModel: viewModel)
                             } label: {
                                 ProductCell(product: item)
                                     .foregroundStyle(.black)
@@ -30,12 +30,13 @@ struct CatalogView: View {
                 }
             }
             
-            Section("Pizza") {
+            Section(Constants.LocalizedStrings.pizza) {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVGrid(columns: layout) {
                         ForEach(CatalogViewModel.shared.products, id: \.id) { item in
                             NavigationLink {
-                                ProductDetailView(product: item)
+                                let viewModel = ProductDetailViewModel(product: item)
+                                ProductDetailView(viewModel: viewModel)
                             } label: {
                                 ProductCell(product: item)
                                     .foregroundStyle(.black)
@@ -46,7 +47,7 @@ struct CatalogView: View {
                 }
             }
         }
-        .navigationTitle("Catalog")
+        .navigationTitle(Constants.LocalizedStrings.catalog)
     }
 }
 

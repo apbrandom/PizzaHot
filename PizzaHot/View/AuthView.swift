@@ -66,7 +66,7 @@ struct AuthView: View {
                 .font(.title3.bold())
                 .foregroundStyle(.darkBrown)
                 .clipShape(.buttonBorder)
-                .contentShape(Rectangle())  // Добавьте этот модификатор
+                .contentShape(Rectangle())
                 .padding()
                 
                 Button("Not with us yet?") {

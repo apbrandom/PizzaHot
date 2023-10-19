@@ -18,8 +18,11 @@
 		CB867DC42ADD852B0058AB86 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB867DC32ADD852B0058AB86 /* AuthView.swift */; };
 		CB867DC62ADD852C0058AB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB867DC52ADD852C0058AB86 /* Assets.xcassets */; };
 		CB867DC92ADD852C0058AB86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB867DC82ADD852C0058AB86 /* Preview Assets.xcassets */; };
+		CBAB135E2AE135E300B6858B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAB135D2AE135E300B6858B /* Constants.swift */; };
+		CBAB13602AE13D6C00B6858B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAB135F2AE13D6C00B6858B /* Tab.swift */; };
 		CBC4C8D72ADFD3CE000FEFEF /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C8D62ADFD3CE000FEFEF /* CatalogViewModel.swift */; };
 		CBC4C8D92ADFF4FD000FEFEF /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C8D82ADFF4FD000FEFEF /* ProductDetailView.swift */; };
+		CBC4C8DB2AE031C3000FEFEF /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C8DA2AE031C3000FEFEF /* ProductDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +38,11 @@
 		CB867DC32ADD852B0058AB86 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CB867DC52ADD852C0058AB86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB867DC82ADD852C0058AB86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CBAB135D2AE135E300B6858B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CBAB135F2AE13D6C00B6858B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		CBC4C8D62ADFD3CE000FEFEF /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		CBC4C8D82ADFF4FD000FEFEF /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		CBC4C8DA2AE031C3000FEFEF /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				CB76EED92ADEE39100B3D518 /* Tools.swift */,
+				CBAB135D2AE135E300B6858B /* Constants.swift */,
+				CBAB135F2AE13D6C00B6858B /* Tab.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -99,11 +107,11 @@
 		CB867DC02ADD852B0058AB86 /* PizzaHot */ = {
 			isa = PBXGroup;
 			children = (
-				CBC4C8D52ADFD38D000FEFEF /* ViewModel */,
-				CB76EED82ADEE27A00B3D518 /* Utilities */,
 				CB867DC12ADD852B0058AB86 /* PizzaHotApp.swift */,
 				CBC4C8D42ADFD373000FEFEF /* Model */,
 				CB76EED02ADEBE7500B3D518 /* View */,
+				CBC4C8D52ADFD38D000FEFEF /* ViewModel */,
+				CB76EED82ADEE27A00B3D518 /* Utilities */,
 				CB867DC52ADD852C0058AB86 /* Assets.xcassets */,
 				CB867DC72ADD852C0058AB86 /* Preview Content */,
 			);
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CBC4C8D62ADFD3CE000FEFEF /* CatalogViewModel.swift */,
+				CBC4C8DA2AE031C3000FEFEF /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,10 +220,13 @@
 				CB867DC22ADD852B0058AB86 /* PizzaHotApp.swift in Sources */,
 				CB76EECF2ADEB84700B3D518 /* ProfileView.swift in Sources */,
 				CB76EED72ADEDC3900B3D518 /* ProductCell.swift in Sources */,
+				CBAB135E2AE135E300B6858B /* Constants.swift in Sources */,
 				CB76EEDA2ADEE39100B3D518 /* Tools.swift in Sources */,
 				CB76EECD2ADEB81B00B3D518 /* CatalogView.swift in Sources */,
 				CBC4C8D72ADFD3CE000FEFEF /* CatalogViewModel.swift in Sources */,
 				CB76EED42ADEDB5B00B3D518 /* Product.swift in Sources */,
+				CBC4C8DB2AE031C3000FEFEF /* ProductDetailViewModel.swift in Sources */,
+				CBAB13602AE13D6C00B6858B /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

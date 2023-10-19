@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CatalogViewModel: ObservableObject {
+class CatalogViewModel: ObservableObject  {
     
     static let shared = CatalogViewModel()
     
