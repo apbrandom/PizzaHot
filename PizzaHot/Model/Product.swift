@@ -11,6 +11,6 @@ struct Product {
     let id: String
     let title: String
     let imageUrl: String
-    let price: Double
+    var price: Double
     let description: String
 }

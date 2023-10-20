@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CatalogView: View {
-    
+     
     let layout = [GridItem(.adaptive(minimum: screen.width / Constants.LayoutMetrics.sreenRatio))]
     
     var body: some View {

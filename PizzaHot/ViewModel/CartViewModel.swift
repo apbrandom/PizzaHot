@@ -9,9 +9,22 @@ import Foundation
 
 class CartViewModel: ObservableObject {
     
-    @Published var position = [Position]()
+    static let shared = CartViewModel()
+    
+    private init() { }
+    
+    @Published var positions = [Position]()
+    
+    var cost: Double {
+        var sum = 0.0
+        
+        for position in positions {
+            sum += position.cost
+        }
+        return sum
+    }
     
     func addPosition(_ postion: Position) {
-        self.position.append(postion)
+        self.positions.append(postion)
     }
 }

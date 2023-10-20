@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB04C6622AE282AD0029051C /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04C6612AE282AD0029051C /* PositionCell.swift */; };
 		CB76EEC92ADEA9BA00B3D518 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76EEC82ADEA9BA00B3D518 /* MainTabBar.swift */; };
 		CB76EECB2ADEB7D800B3D518 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76EECA2ADEB7D800B3D518 /* CartView.swift */; };
 		CB76EECD2ADEB81B00B3D518 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76EECC2ADEB81B00B3D518 /* CatalogView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB04C6612AE282AD0029051C /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		CB76EEC82ADEA9BA00B3D518 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		CB76EECA2ADEB7D800B3D518 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		CB76EECC2ADEB81B00B3D518 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
@@ -63,13 +65,13 @@
 		CB76EED02ADEBE7500B3D518 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CB76EED52ADEDC0B00B3D518 /* components */,
 				CB867DC32ADD852B0058AB86 /* AuthView.swift */,
 				CB76EEC82ADEA9BA00B3D518 /* MainTabBar.swift */,
 				CB76EECA2ADEB7D800B3D518 /* CartView.swift */,
 				CB76EECC2ADEB81B00B3D518 /* CatalogView.swift */,
 				CBC4C8D82ADFF4FD000FEFEF /* ProductDetailView.swift */,
 				CB76EECE2ADEB84700B3D518 /* ProfileView.swift */,
+				CB76EED52ADEDC0B00B3D518 /* components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				CB76EED62ADEDC3900B3D518 /* ProductCell.swift */,
+				CB04C6612AE282AD0029051C /* PositionCell.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -142,8 +145,8 @@
 		CBC4C8D52ADFD38D000FEFEF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CBC4C8D62ADFD3CE000FEFEF /* CatalogViewModel.swift */,
 				CBC4C8DA2AE031C3000FEFEF /* ProductDetailViewModel.swift */,
+				CBC4C8D62ADFD3CE000FEFEF /* CatalogViewModel.swift */,
 				CBAB13612AE1834600B6858B /* CartViewModel.swift */,
 			);
 			path = ViewModel;
@@ -223,6 +226,7 @@
 				CB867DC42ADD852B0058AB86 /* AuthView.swift in Sources */,
 				CBC4C8D92ADFF4FD000FEFEF /* ProductDetailView.swift in Sources */,
 				CB76EECB2ADEB7D800B3D518 /* CartView.swift in Sources */,
+				CB04C6622AE282AD0029051C /* PositionCell.swift in Sources */,
 				CB867DC22ADD852B0058AB86 /* PizzaHotApp.swift in Sources */,
 				CB76EECF2ADEB84700B3D518 /* ProfileView.swift in Sources */,
 				CBAB13622AE1834600B6858B /* CartViewModel.swift in Sources */,

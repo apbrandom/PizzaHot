@@ -13,6 +13,7 @@ enum Constants {
         static let popular = "Popular"
         static let catalog = "Catalog"
         static let pizza = "Pizza"
+        static let chart = "Chart"
     }
     
     enum LayoutMetrics {

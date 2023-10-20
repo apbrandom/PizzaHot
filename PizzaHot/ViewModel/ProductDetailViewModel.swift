@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductDetailViewModel: ObservableObject {
-    
+   
     enum Size: String, CaseIterable  {
         case small
         case medium
@@ -22,7 +22,7 @@ class ProductDetailViewModel: ObservableObject {
     init(product: Product) {
         self.product = product
         self.size = .medium
-        self.count = 0
+        self.count = 1
     }
     
     func getPrice(size: String) -> Double {

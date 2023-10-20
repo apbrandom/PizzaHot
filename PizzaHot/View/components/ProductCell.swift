@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductCell: View {
     
-    var product: Product
+    let product: Product
     
     var body: some View {
         VStack {

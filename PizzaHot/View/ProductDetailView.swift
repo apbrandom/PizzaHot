@@ -11,6 +11,8 @@ struct ProductDetailView: View {
         
     @ObservedObject var viewModel: ProductDetailViewModel
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -48,9 +50,15 @@ struct ProductDetailView: View {
                 
             }
             
-            Button(action: {
+            Button {
                 print("add to cart pressed")
-            }, label: {
+                var position = Position(id: UUID().uuidString,
+                                        product: viewModel.product,
+                                        count: viewModel.count)
+                position.product.price = viewModel.getPrice(size: viewModel.size.rawValue)
+                CartViewModel.shared.addPosition(position)
+                presentationMode.wrappedValue.dismiss()
+            } label: {
                 Text("Add to cart")
                     .padding()
                     .frame(maxWidth: .infinity)
@@ -60,7 +68,7 @@ struct ProductDetailView: View {
                     .clipShape(.buttonBorder)
                     .contentShape(Rectangle())
                     .padding()
-            })
+            }
             Spacer()
         }
     }
